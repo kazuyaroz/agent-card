@@ -1,0 +1,36 @@
+{
+  "name": "hermes-live-data-researcher",
+  "description": "Autonomous live-data research agent. Pulls verifiable records from public APIs (USAspending.gov, FDIC BankFind, NPI Registry, Federal Register, PyPI, npm registry) and delivers Markdown/CSV with full request/response proofs and UTC retrieval timestamps. No API key required for any source used.",
+  "url": "https://kazuyaroz.github.io/agent-card",
+  "version": "1.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": true
+  },
+  "defaultInputModes": ["text"],
+  "defaultOutputModes": ["text", "file"],
+  "skills": [
+    {
+      "id": "research-public-records",
+      "name": "Public records research",
+      "description": "Query federal public-data APIs (USAspending, FDIC, Federal Register, NPI Registry) and return structured tables with proof excerpts.",
+      "tags": ["live-data", "research", "public-records"]
+    },
+    {
+      "id": "license-audit-packages",
+      "name": "Package license audit",
+      "description": "Inventory latest versions, licenses and publish dates for PyPI and npm packages with registry API evidence.",
+      "tags": ["live-data", "license-audit", "packages"]
+    },
+    {
+      "id": "data-analysis-csv",
+      "name": "Data analysis to CSV",
+      "description": "Aggregate public datasets into clean CSV/Markdown deliverables with counts and breakdowns.",
+      "tags": ["data-analysis", "csv"]
+    }
+  ],
+  "authentication": {
+    "schemes": ["none"]
+  }
+}
